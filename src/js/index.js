@@ -68,10 +68,19 @@ const mobMenuModal = document.querySelector('.m-menu__bg');
 if(mobMenuModal) {
 	const mobMenu = document.querySelector('.jsMobMenu');
 	const mobMenuModalClose = mobMenuModal.querySelector('.m-menu__close');
+	const localBtns = mobMenuModal.querySelectorAll('button');
 
 	mobMenu.addEventListener('click', (e) => {
 		mobMenuModal.classList.add('show');
 		disableScroll();
+	});
+
+	localBtns.forEach((btn) => {
+		btn.addEventListener('click', (e) => {
+			e.preventDefault();
+			mobMenuModal.classList.remove('show');
+			enableScroll();
+		});
 	});
 
 	mobMenuModalClose.addEventListener('click', () => {
@@ -81,7 +90,6 @@ if(mobMenuModal) {
 }
 // === end MOBILE MENU
 
-// === start CALLBACK MODAL
 // === start MODAL CALLBACK
 if (document.querySelector(".callback-bg")) {
 	const btnsOpen = document.querySelectorAll(".jsOpenModal");
@@ -101,4 +109,54 @@ if (document.querySelector(".callback-bg")) {
 	});
 }
 // === end MODAL CALLBACK
-// === end CALLBACK MODAL
+
+// === start MODAL SEARCH
+if (document.querySelector(".search-bg")) {
+	const btnsOpen = document.querySelectorAll(".jsOpenSearch");
+	const modalWin = document.querySelector(".search-bg");
+	const closeWin = document.querySelector(".search-close");
+
+	btnsOpen.forEach((btn) => {
+		btn.addEventListener("click", (event) => {
+			modalWin.classList.add("show");
+			disableScroll();
+		});
+	});
+
+	closeWin.addEventListener("click", (event) => {
+		modalWin.classList.remove("show");
+		enableScroll();
+	});
+}
+// === end MODAL SEARCH
+
+// === start MODAL SEARCH
+if (document.querySelector(".lk-bg")) {
+	const btnsOpen = document.querySelectorAll(".jsOpenLK");
+	const modalWin = document.querySelector(".lk-bg");
+	const closeWin = document.querySelector(".lk-close");
+
+	btnsOpen.forEach((btn) => {
+		btn.addEventListener("click", (event) => {
+			modalWin.classList.add("show");
+			disableScroll();
+		});
+	});
+
+	closeWin.addEventListener("click", (event) => {
+		modalWin.classList.remove("show");
+		enableScroll();
+	});
+}
+// === end MODAL SEARCH
+
+// === start FOOTER LIST DROP
+const foolistTitle = document.querySelectorAll('.foo-list__title');
+if(foolistTitle.length > 0) {
+	foolistTitle.forEach((title) => {
+		title.addEventListener('click', (e) => {
+			e.currentTarget.classList.toggle('show');
+		});
+	});
+}
+// === end FOOTER LIST DROP

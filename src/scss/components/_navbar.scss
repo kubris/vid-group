@@ -54,16 +54,18 @@
 
 		&-drop {
 			position: absolute;
+			top: 155%;
 			max-height: 0;
 			transition: max-height 0.2s ease-out;
 			overflow: hidden;
 
 			li {
-				padding: 10px 0;
+				padding: 4px 0;
 				white-space: nowrap;
 				transition: color 0.2s ease-out;
 				&:first-child {
-					margin-top: 26px;
+					padding-top: 26px;
+					border-top: 4px solid var(--accent);
 				}
 				&:last-child {
 					margin-bottom: 26px;
