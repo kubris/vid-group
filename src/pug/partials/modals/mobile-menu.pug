@@ -1,0 +1,41 @@
+.m-menu__bg
+	.m-menu
+		button.m-menu__close
+			+mono-svg('close')
+
+		ul.m-menu__list
+			li
+				span.drop Услуги
+				ul.droplist
+					li
+						a(href="#") Объемные буквы
+					li
+						a(href="#") Световые короба
+					li
+						a(href="#") Неоновые панели
+					li
+						a(href="#") Панель-кронштейн
+			li
+				span.drop Чё-то ещё
+				ul.droplist
+					li
+						a(href="#") Чо-то ещё 1
+					li
+						a(href="#") Чо-то ещё 2
+					li
+						a(href="#") Чо-то ещё 3
+			li
+				a(href="#") Блог
+			li
+				a(href="#") Контакты
+
+		.m-menu__btns
+			button.btn.btn--accent.brs-8.btn--lg.btn--full.jsOpenModal Заказать звонок
+			button.btn.btn--trans-accent.brs-8.btn--lg.btn--full 
+				i
+				| Войти
+		.m-menu__socials
+			a(href="#", title="Whatsapp")
+				+img-svg('col-wa')
+			a(href="#", title="Telegram")
+				+img-svg('col-tg')

@@ -1,0 +1,23 @@
+:root {
+	--container-width: 1340px;
+	--container-padding: 50px;
+	
+	--accent: #FE3C3B;
+	--accent-light: #FF9393;
+	--dark: #15171A;
+	--white: #FFF;
+	--danger: #E14D3C;
+	--success: #28A745;
+	--gray200: #F4F6FC;
+	--gray400: #CBD3DA;
+	--gray600: #6C757D;
+
+	--font-main: "Montserrat", sans-serif;
+	--font-head: "Manrope", serif;
+}
+@media (max-width: 1024px) {
+	:root {--container-padding: 54px}
+}
+@media (max-width: 767px) {
+	:root {--container-padding: 20px}
+}

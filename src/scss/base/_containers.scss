@@ -1,0 +1,15 @@
+.container {
+	margin: 0 auto;
+	padding: 0 var(--container-padding);
+	max-width: calc(var(--container-width) + (2 * var(--container-padding)));
+	width: 100%;
+}
+
+.container-right {
+	margin-left: calc((100vw - var(--container-width)) / 2);
+}
+@media (max-width: 1700px) {
+	.container-right {
+		margin-left: var(--container-padding);
+	}
+}
