@@ -1,7 +1,6 @@
 .drop {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 	transition: color 0.2s;
 	cursor: pointer;
 
@@ -37,10 +36,10 @@
 			white-space: nowrap;
 			transition: color 0.2s ease-out;
 			&:first-child {
-				margin-top: 26px;
+				margin-top: 6px;
 			}
 			&:last-child {
-				margin-bottom: 26px;
+				margin-bottom: 6px;
 			}
 		}
 		li:hover {

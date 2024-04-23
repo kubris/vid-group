@@ -1,0 +1,95 @@
+.draft-free {
+
+	.container {
+		@include mw1024 {padding: 0}	
+	}
+
+	.h2 {
+		margin-bottom: 15px;
+
+		@include mw768 {
+			margin-bottom: 25px;
+		}
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 7fr 5fr;
+		grid-gap: 20px;
+		background-color: var(--gray200);
+		@include mw1024 {
+			grid-template-columns: 1fr;
+			grid-gap: 0;
+		}
+
+		&-item {
+			&:first-child {
+				margin: 50px 0 50px auto;
+				padding-left: 20px;
+				max-width: 680px;
+				width: 100%;
+				@include mw1024 {
+					max-width: unset;
+					margin: 0;
+					padding: 50px 54px;
+					background: var(--gray200) url(../images/callback-bg.png) no-repeat;
+					background-position: right center;
+				}
+				@include mw768 {
+					padding: 14px 20px 30px;
+					background-position: center center;
+				}
+			}
+			&:last-child {
+				.draft-free__grid-img {
+					height: 100%;
+					img {
+						height: 100%;
+						width: 100%;
+						object-fit: cover;
+					}
+				}
+				@include mw1024 {display: none;}
+			}
+
+			.label {
+				margin-bottom: 30px;
+				padding: 12px 23px;
+				display: inline-block;
+				color: var(--accent);
+				font-size: 18px;
+				line-height: 28px;
+				font-weight: 500;
+				background-color: var(--white);
+				border-radius: 10px;
+				@include mw768 {
+					padding: 10px 15px;
+				}
+			}
+
+			.text {margin-bottom: 30px}
+		}
+	}
+
+	&__form {
+		&.callback {
+			padding: 0;
+			background: unset;
+			border-radius: unset;
+			max-width: unset;
+			@include mw1024 {
+				margin: 0;
+			}
+		}
+		.tac {
+			text-align: left;
+			@include mw768 {text-align: center;}
+		}
+		&-btn {
+			@include mw768 {
+				max-width: 360px;
+				width: 100%;
+			}
+		}
+	}
+}

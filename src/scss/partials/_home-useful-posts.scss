@@ -1,0 +1,78 @@
+// === ROLLING LIST
+.roll {
+	border-top: 1px solid var(--gray);
+	border-bottom: 1px solid var(--gray);
+
+	@include mw768 {
+		padding-top: 0;
+		border-top: unset;
+	}
+
+	&-list {
+		margin-bottom: 30px;
+		display: flex;
+		align-items: center;
+		flex-wrap: nowrap;
+		gap: 15px;
+		overflow-x: auto;
+		@include mw768 {margin-bottom: 20px;}
+
+		&::-webkit-scrollbar {
+			height: 0;
+			width: 0;
+		}
+	}
+
+	&-item {
+		button {
+			padding: 7px 15px;
+			color: var(--text-gray);
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 28px;
+			transition: color 0.2s;
+			white-space: nowrap;
+			border-radius: 24px;
+			border: 1px solid var(--gray200);
+			background-color: var(--gray200);
+			cursor: inherit;
+		}
+
+		&.active button {
+			color: var(--white);
+			background-color: var(--accent);
+		}
+	}
+}
+
+.useful-posts { 
+	.h2 {
+		margin-bottom: 30px;
+		@include mw768 {margin-bottom: 20px}
+	}
+}
+
+.useful-slider {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 20px;
+	overflow-x: auto;
+	&::-webkit-scrollbar {
+		height: 0;
+		width: 0;
+	}
+	@include mw768 {gap: 16px;}
+
+	&__card {
+		min-width: 433px;
+		@include mw1024 {min-width: 320px;}
+		@include mw768 {min-width: 300px;}
+
+		&-content {
+			margin-top: 10px;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+	}
+}

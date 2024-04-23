@@ -1,25 +1,26 @@
 header.header
+	.header__top
+		.container
+			.header__top-wrapper
+				button.header__top-city
+					+mono-svg('map', 'i-city')
+					| Санкт-Петербург
+
+				.header__top-btns
+					.header__top-links
+						a(class="top-btns__tel" href="tel:+78007757098") 
+							+mono-svg('i-tel')
+							| +7 (800) 775-70-98
+						.divider |
+						a(class="top-btns__email" href="mailto:hello@vid-group.ru") hello@vid-group.ru
+					.header__top-socials
+						a(href="javascript:")
+							+img-svg('col-wa')
+						a(href="javascript:")
+							+img-svg('col-tg')
+					button.header__top-search.jsOpenSearch
+						+mono-svg('search')
 	.container
-		.header__top
-			button.header__top-city
-				+mono-svg('map', 'i-city')
-				| Санкт-Петербург
-
-			.header__top-btns
-				.header__top-links
-					a(class="top-btns__tel" href="tel:+78007757098") 
-						+mono-svg('i-tel')
-						| +7 (800) 775-70-98
-					.divider |
-					a(class="top-btns__email" href="mailto:hello@vid-group.ru") hello@vid-group.ru
-				.header__top-socials
-					a(href="javascript:")
-						+img-svg('col-wa')
-					a(href="javascript:")
-						+img-svg('col-tg')
-				button.header__top-search.jsOpenSearch
-					+mono-svg('search')
-
 		.header__bottom.navbar
 			a.navbar-logo(href="/")
 				+img-svg('logo')

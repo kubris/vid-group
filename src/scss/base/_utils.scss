@@ -21,7 +21,7 @@
 	display: flex;
 	align-items: center;
 }
-
+.tac {text-align: center;}
 
 .divider {
 	display: inline-block;
@@ -54,6 +54,12 @@
 		opacity: 1;
 	}
 }
+
+.mt40-sm30 {
+	margin-top: 40px !important;
+	@include mw768 {margin-top: 30px !important;}
+}
+.w100vw {width: 100vw;}
 
 .underline-color {
 	position: relative;
@@ -102,6 +108,11 @@
 	}
 }
 
+[data-moblink] {
+	cursor: auto;
+	@include mw768 {cursor: pointer;}
+}
+
 .show {
 	&-xl {
 		display: block;
@@ -116,6 +127,13 @@
 		display: none;
 		@include mw768 {display: block}		
 	}
+}
+
+.clap {
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
 //animation: show 0.3s linear;

@@ -1,5 +1,5 @@
 //- modal-callback
-.callback {
+.sign {
 	position: relative;
 	max-width: 780px;
 	width: 100%;
@@ -98,22 +98,6 @@
 		}
 	}
 
-	textarea {
-		padding: 20px;
-		height: 120px;
-		width: 100%;
-		font-size: 18px;
-		transition: box-shadow 0.2s;
-		background-color: #ffffff;
-		color: var(--dark);
-		resize: none;
-
-		&:hover {
-			box-shadow: 0 0 6px #aaa;
-		}
-	}
-
-	textarea::placeholder,
 	label>input::placeholder {
 		color: var(--gray600);
 		font-size: 18px;
@@ -210,11 +194,5 @@
 		&:active {
 			transform: scale(0.9)
 		}
-	}
-}
-
-@media (max-height:500px) {
-	.callback {
-		padding: 20px 15px 10px;
 	}
 }

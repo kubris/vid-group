@@ -1,21 +1,31 @@
 .header {
-	@include mw1024 {	padding: 10px 0 }
+	@include mw1024 {
+		padding: 10px 0
+	}
+
 	@include mw768 {
 		padding-top: 0;
 	}
 
 	&__top {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
 		margin-bottom: 15px;
 		padding: 10px 0;
-		@include mw1024 {	display: none }
+		background-color: var(--gray200);
+
+		@include mw1024 {
+			display: none
+		}
+
 		@include mw768 {
-			display: flex; 
-			justify-content: center;
-			margin: 0 -20px 10px;
+			display: block;
 			background-color: var(--accent);
+		}
+
+		&-wrapper {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			@include mw768 {justify-content: center;}
 		}
 
 		&-city {
@@ -31,7 +41,10 @@
 				height: 18px;
 				fill: var(--gray600);
 			}
-			@include mw768 {	display: none }
+
+			@include mw768 {
+				display: none
+			}
 		}
 
 		&-btns {
@@ -47,15 +60,26 @@
 			&>a {
 				color: var(--gray600);
 				font-weight: 500;
+				transition: color 0.2s ease-out;
+				&:hover {
+					color: var(--accent);
+				}
+
 				@include mw768 {
 					color: var(--white);
 					font-weight: 400;
 					font-size: 14px;
 				}
 			}
+
 			@include mw768 {
-				.top-btns__email {display: none}
-				.divider {display: none}
+				.top-btns__email {
+					display: none
+				}
+
+				.divider {
+					display: none
+				}
 			}
 		}
 
@@ -63,7 +87,10 @@
 			display: flex;
 			align-items: center;
 			gap: 30px;
-			@include mw768 {	display: none }
+
+			@include mw768 {
+				display: none
+			}
 
 			&>a {
 				img {
@@ -75,6 +102,7 @@
 						transform: scale(1.1);
 					}
 				}
+
 				&:active {
 					img {
 						transform: scale(0.95);
@@ -86,6 +114,7 @@
 
 		&-search {
 			margin-left: -10px;
+
 			svg {
 				fill: var(--gray600);
 				transition: transform 0.2s ease-out;
@@ -96,12 +125,16 @@
 					transform: scale(1.1);
 				}
 			}
+
 			&:active {
 				svg {
 					transform: scale(0.95);
 				}
 			}
-			@include mw768 {	display: none }
+
+			@include mw768 {
+				display: none
+			}
 		}
 	}
 }
@@ -112,7 +145,11 @@
 	justify-content: flex-end;
 	gap: 5px 30px;
 	flex-wrap: wrap;
-	@include mw1024 {	margin-left: auto }
+
+	@include mw1024 {
+		margin-left: auto
+	}
+
 	@include mw768 {
 		margin-left: unset;
 		display: none;
@@ -131,18 +168,26 @@
 		display: none;
 		width: 24px;
 		height: 24px;
-		@include mw1024 {	display: block	}
-		@include mw768 {	margin-left: auto }
+
+		@include mw1024 {
+			display: block
+		}
+
+		@include mw768 {
+			margin-left: auto
+		}
 
 		svg {
 			fill: var(--gray600);
 			transition: transform 0.2s ease-out;
 		}
+
 		&:hover {
 			svg {
 				transform: scale(1.1);
 			}
 		}
+
 		&:active {
 			svg {
 				transform: scale(0.95);
@@ -158,6 +203,7 @@
 
 	&>svg {
 		display: none;
+
 		@include mw768 {
 			display: block;
 			width: 16px;

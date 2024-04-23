@@ -12,7 +12,7 @@ html(lang="ru-RU")
 		meta(name="keywords" content="")
 
 		//- lazy loading style
-		//- <link rel="preload" href="css/swiper-bundle.min.css" as="style" onload="this.rel='stylesheet'" media="all" >
+		<link rel="preload" href="css/swiper-bundle.min.css" as="style" onload="this.rel='stylesheet'" media="all" >
 
 		link(rel="stylesheet" href="css/style.css")
 	body
@@ -28,11 +28,12 @@ html(lang="ru-RU")
 		include ../partials/modals/mobile-menu
 		include ../partials/modals/search
 		include ../partials/modals/lk-enter
+		include ../partials/modals/sign
 	
 		// script block
-		//- script(defer src="js/fslightbox.min.js")
 		//- script(defer src="js/smooth-scroll.min.js")
-		//- script(defer src="js/swiper-bundle.min.js")
+		script(defer src="js/fslightbox.min.js")
+		script(defer src="js/swiper-bundle.min.js")
 		script(defer src="js/index.js")
 		//- script(defer)
 			| document.addEventListener('DOMContentLoaded', () => {

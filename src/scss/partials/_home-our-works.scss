@@ -1,0 +1,58 @@
+.our-works {
+	.h2 {
+		margin-bottom: 30px;
+		@include mw768 {margin-bottom: 20px;}
+	}
+	&__grid {
+		margin-bottom: 40px;
+		.swiper-wrapper {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 20px;
+		}		
+		@include mw1024 {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include mw768 {
+			margin-bottom: 30px;
+			.swiper-wrapper {
+				display: flex;
+				gap: 0;
+			}
+			.swiper-pagination-bullet {
+				background-color: var(--gray400);
+				opacity: 1;
+			}
+			.swiper-pagination-bullet-active {
+				background-color: var(--accent);
+			}
+		}
+
+		a {
+			display: block;
+			height: 100%;
+			overflow: hidden;
+			img {
+				transition: transform 3s ease-out;
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+				&:hover {
+					transform: scale(1.2);
+				}
+			}
+		}
+	}
+
+	&__pagination {
+		display: none;
+		margin-top: 10px;
+		text-align: center;
+		@include mw768 {display: block;}
+	}
+
+	&__btn {
+		max-width: 360px;
+		width: 100%;
+	}
+}

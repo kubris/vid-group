@@ -1,0 +1,71 @@
+.clients {
+	.h2 {
+		margin-bottom: 30px;
+		@include mw1024 {margin-bottom: 20px}
+	}
+	
+	&__grid {
+		margin: 0 67px;
+		overflow: hidden;
+		@include mw1024 {
+			margin: 0;
+			overflow: unset;
+		}
+
+		&-wrapper {
+			position: relative;
+		}
+
+		.swiper-wrapper {
+			@include mw1024 {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				grid-gap: 20px;
+			}
+			@include mw768 {
+				grid-template-columns: repeat(2, 1fr);
+				grid-gap: 16px;
+			}
+		}
+	}
+
+	&__btns {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		@include mw1024 {display: none;}
+
+		&-prev,
+		&-next {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 41px;
+			width: 44px;
+			border-radius: 10px;
+			background-color: var(--accent);
+			svg {
+				fill: var(--white);
+				transition: margin 0.1s ease-out;
+			}
+		}
+		&-prev {
+			transform: rotate(180deg);
+			&:hover {
+				svg {
+					margin-left: 3px;
+				}
+			}
+		}
+		&-next {
+			&:hover {
+				svg {
+					margin-right: -3px;
+				}
+			}
+		}
+	}
+}
