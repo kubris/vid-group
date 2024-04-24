@@ -31,7 +31,10 @@
 				}
 
 				&::after {
-					content: "/";
+					content: "\203A";
+					line-height: 0.82;
+					font-size: 30px;
+					font-weight: 400;
 				}
 			}
 

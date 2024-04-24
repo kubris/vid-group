@@ -11,16 +11,11 @@ html(lang="ru-RU")
 		meta(name="viewport" content="width=device-width,initial-scale=1")
 		meta(name="keywords" content="")
 
-		//- lazy loading style
-		<link rel="preload" href="css/swiper-bundle.min.css" as="style" onload="this.rel='stylesheet'" media="all" >
-
 		link(rel="stylesheet" href="css/style.css")
 	body
 		include ../partials/header/header
 
 		block content
-
-		include ../partials/footer/footer
 
 		//-#overlay
 
@@ -30,15 +25,4 @@ html(lang="ru-RU")
 		include ../partials/modals/lk-enter
 		include ../partials/modals/sign
 	
-		// script block
-		//- script(defer src="js/smooth-scroll.min.js")
-		script(defer src="js/fslightbox.min.js")
-		script(defer src="js/swiper-bundle.min.js")
 		script(defer src="js/index.js")
-		//- script(defer)
-			| document.addEventListener('DOMContentLoaded', () => {
-			|	setTimeout(function () {
-			|		console.log('Scripts Lazy loading');
-			|	}, 3500);
-			| });
-		block scripts

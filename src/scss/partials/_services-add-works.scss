@@ -1,0 +1,15 @@
+.add-services {
+	.h2 {
+		margin-bottom: 40px;
+		text-align: center;
+		@include mw768 {
+			margin-bottom: 30px;
+			text-align: left;
+		}
+	}
+	&__grid {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px 20px;
+	}		
+}

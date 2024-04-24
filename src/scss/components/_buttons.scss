@@ -55,6 +55,18 @@
 		}
 	}
 
+	&--white-sq {
+		padding: 20px 30px;
+		border: 1px solid var(--gray400);
+		font-size: 20px;
+		line-height: 26px;
+		@include mw768 {padding: 12px 30px;}
+		&:hover {
+			background-color: var(--accent);
+			color: var(--white);
+		}		
+	}
+
 	&-arrow-accent {
 		display: flex;
 		align-items: center;
@@ -64,10 +76,17 @@
 		font-size: 18px;
 		line-height: 28px;
 		transition: color 0.2s ease-out;
-		svg {	fill: var(--accent) }
+
+		svg {
+			fill: var(--accent)
+		}
+
 		&:hover {
 			color: var(--accent-light);
-			svg {	fill: var(--accent-light) }
+
+			svg {
+				fill: var(--accent-light)
+			}
 		}
 	}
 
