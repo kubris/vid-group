@@ -1,0 +1,61 @@
+.service-page {
+	&.hero-home {
+
+		.breadcrumbs {
+			margin-top: 20px;
+			margin-bottom: -28px;
+			@include mw1024 {
+				margin-bottom: -50px;
+			}
+			@include mw768 {
+				margin-top: 10px;
+				margin-bottom: 20px;
+			}
+		}
+
+		.hero-home__promo {
+			grid-template-columns: repeat(2, 1fr);
+
+			p {
+				&:last-of-type {
+					margin-bottom: 40px;
+					@include mw768 {margin-bottom: 30px;}
+				}
+			}
+
+			.hero-home__content {
+				padding-top: 88px;
+				@include mw1024 {padding-top: 0;}
+
+				.h1 {
+					margin-bottom: 30px;
+				}
+
+				&>.btn {
+					display: flex;
+					margin: 0 auto;
+				}
+			}
+
+			@include mw1024 {
+				display: flex;
+				flex-direction: column-reverse;
+
+				.hero-home__img {
+					display: block;
+					height: 420px;
+					@include mw768 {
+						height: auto;
+						img {
+							aspect-ratio: 320 / 204;
+						}
+					}
+				}
+			}
+		}
+
+		@include mw1024 {
+			background: unset;
+		}
+	}
+}

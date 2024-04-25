@@ -1,0 +1,37 @@
+section.sp-calc.offset
+	.container
+		.h2.mb30-sm20 Рассчитайте прямо сейчас
+		.sp-calc__grid
+			.sp-calc__grid-item
+				.sp-calc__grid-img
+					img(src="images/calc.jpg", alt="")
+			.sp-calc__grid-item
+				.calc__field
+					.h3 Количество букв
+					input(name="calc-amount" value="0" type="text")
+			.sp-calc__grid-item
+				.calc__field
+					.h3 Высота букв, см
+					input(name="calc-height" value="0" type="text")
+			.sp-calc__grid-item
+				.calc__field
+					.h3 Шрифт
+					.custom-select
+						select
+							option(value='0') Выбрать из списка
+							option(value='1') Простой шрифт
+							option(value='2') Шрифт с засечками
+							option(value='3') Курсивный шрифт
+			.sp-calc__grid-item
+				.calc__field
+					.h3 Варианты подсветки
+					.custom-select
+						select
+							option(value='0') Выбрать из списка
+							option(value='1') Светится только лицевая сторона
+							option(value='2') Светится лицевая сторона и торец
+							option(value='3') Светится только торец
+			.sp-calc__grid-item
+				.calc__field.calc__field-price
+					.h3 Цена:
+						span.jsCalcPrice 0

@@ -59,7 +59,25 @@
 	margin-top: 40px !important;
 	@include mw768 {margin-top: 30px !important;}
 }
+.mb40-sm30 {
+	margin-bottom: 40px !important;
+	@include mw768 {margin-bottom: 30px !important;}
+}
+.mb30-sm20 {
+	margin-bottom: 30px !important;
+	@include mw768 {margin-bottom: 20px !important;}
+}
 .w100vw {width: 100vw;}
+
+.mobile-none {@include mw768 {display: none;}}
+.mobile-db-show {
+	display: none;
+	@include mw768 {display: block;}
+}
+.mobile-df-show {
+	display: none;
+	@include mw768 {display: flex;}
+}
 
 .underline-color {
 	position: relative;
