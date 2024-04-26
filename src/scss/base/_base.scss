@@ -61,7 +61,7 @@ h3, .h3 {
 }
 
 
-section.offset {
+.offset {
 	margin-bottom: 160px;
 	@include mw1024 {margin-bottom: 120px}
 	@include mw575 {margin-bottom: 100px}
