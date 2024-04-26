@@ -422,6 +422,31 @@ if (document.querySelector(".jsTab")) {
 }
 // === end BLOG TAB
 
+// === start TABS SCRIPT
+if (document.querySelector(".htb") && document.querySelector(".btb")) {
+	const btns = document.querySelectorAll(".htb");
+	const blocks = document.querySelectorAll(".btb");
+	btns.forEach((btn) => {
+		btn.addEventListener("click", (e) => {
+			let currBtn = e.currentTarget.dataset.tb;
+			let currBlock = document.querySelector("[data-cnt=" + currBtn + "]");
+
+			delAllActiveBtns(btns);
+			let isClass = e.currentTarget.contains.classList == "active";
+			!isClass ? e.currentTarget.classList.add("active") : false;
+
+			hideAll(blocks);
+
+			if (currBlock) {
+				fadeIn(currBlock, 1000, "block");
+			} else {
+				fadeIn(blocks[0], 1000, "block");
+			}
+		});
+	});
+}
+// === end TABS SCRIPT
+
 // === start TOGGLE HEIGHT
 const allHeights = document.querySelectorAll('.jsHeightBtn');
 if (allHeights.length > 0) {
@@ -545,3 +570,4 @@ if (document.querySelector('.sp-vars__slider')) {
 	window.addEventListener("resize", swiperSpCard);
 }
 // === end VARIABLES SLIDER
+
