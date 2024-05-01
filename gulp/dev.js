@@ -14,6 +14,7 @@ const gulp 			= require('gulp'),
 		cheerio 		= require('gulp-cheerio'),
 		replace 		= require('gulp-replace'),
 		imagemin 	= require("gulp-imagemin"),
+		//webpHTML 	= require('gulp-webp-html-nosvg'),
 		webp 			= require("gulp-webp");
 
 //const webpack = require("webpack-stream");
@@ -62,6 +63,7 @@ gulp.task('pug:dev', function(){
 		.pipe(pug({
 			pretty: true
 		}))
+		// .pipe(webpHTML())
 		.pipe(gulp.dest('./build'))
 });
 // === stop PUG ===

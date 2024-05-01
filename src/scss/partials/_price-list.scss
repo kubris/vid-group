@@ -1,0 +1,51 @@
+.price-list {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 886px;
+
+	.h2 {margin-bottom: 30px;}
+
+	p {
+		& + p {
+			margin-top: 15px;
+		}
+	}
+
+	&__table {
+		margin: 40px 0;
+		.th,
+		.tr {
+			padding: 16px 20px;
+		}
+		.th {
+			font-size: 20px;
+			line-height: 29px;
+			background-color: var(--gray400);
+		}
+		.tr {
+			display: flex;
+			justify-content: space-between;
+			gap: 20px;
+			font-size: 18px;
+			line-height: 28px;
+			&>span {
+				white-space: nowrap;
+			}
+
+			&:nth-child(odd) {background-color: var(--gray200);}
+		}
+	}
+	@include mw768{
+		margin-left: -20px;
+		margin-right: -20px;
+		.h2 {margin-bottom: 20px;}
+		&__text {
+			margin: 0 20px;
+		}
+		.th,
+		.tr {
+			font-size: 16px;
+			line-height: 26px;
+		}
+	}
+}

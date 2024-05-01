@@ -1,0 +1,49 @@
+.about-page {
+	.breadcrumbs {margin: 30px 0 -30px}
+
+	.hero-home__promo {
+		grid-template-columns: repeat(12, 1fr);
+	}
+
+	.hero-home__content {
+		padding-top: 120px;
+		grid-column: 1 / 6;
+		.h1 {margin-bottom: 30px}
+	}
+
+	.hero-home__img {
+		height: 580px;
+		grid-column: 7 / 13;
+	}
+
+	@include mw1024 {
+		.breadcrumbs {margin: 20px 0 40px}
+
+		.hero-home__promo {
+			margin-bottom: 0;
+			display: flex;
+			flex-direction: column;
+			gap: 40px;
+		}
+		.hero-home__content {
+			padding-top: 0;
+			.h1 {margin-bottom: 20px}
+		}
+		.hero-home__img {
+			display: block;
+			height: 460px;
+		}
+	}
+	@include mw768 {
+		.breadcrumbs {margin: 10px 0 30px}
+
+		.hero-home__content {
+			.h1 {margin-bottom: 15px}
+		}
+
+		.hero-home__img {
+			height: auto;
+			aspect-ratio: 320 / 224;
+		}
+	}
+}

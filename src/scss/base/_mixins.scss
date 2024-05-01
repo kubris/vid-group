@@ -20,6 +20,13 @@
 	}
 }
 
+//@include mw1920 {}
+@mixin mw1920(){
+	@media (max-width: 1920px) {
+		@content;
+	}
+}
+
 //@include mw1440 {}
 @mixin mw1440(){
 	@media (max-width: 1440px) {

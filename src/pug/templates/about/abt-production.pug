@@ -1,0 +1,43 @@
+section.about-production.offset
+	.container
+		.h2.mb30-sm20 Наше производство
+		.about-production__grid
+			.about-production__grid-item
+				#video
+					#video-play.video-control
+						+img-svg('play')
+					video(id="myVideo" preload='auto' poster='uploads/production/prod-play.jpg')
+						source(src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4")
+
+			.about-production__grid-item
+				.text--large Мы гордимся нашим большим станочным парком и автоматизированным производством, которые позволяют нам достичь высокого качества продукции при минимальном количестве сотрудников.
+				p В нашем производстве используются самые современные технологии, которые позволяют автоматизировать большую часть производственных процессов. Мы можем гарантировать высокую точность и качество нашей продукции, так как все этапы производства контролируются специальными программами и оборудованием.
+				p Однако, мы также придаем огромное значение отделу проверки качества. Наши специалисты внимательно следят за каждым этапом производства, чтобы убедиться в соответствии нашей продукции высоким стандартам качества. Мы заботимся о том, чтобы наши клиенты получили продукцию, которая будет служить им надежно и долго.
+		.about-production__slider
+			.ap-slider
+				.swiper-wrapper
+					.swiper-slide
+						a(class="img" data-fslightbox="ab-prod" href="uploads/production/prod-1.jpg")
+							img(src="uploads/production/prod-1.jpg", alt="")
+					.swiper-slide
+						a(class="img" data-fslightbox="ab-prod" href="uploads/production/prod-2.jpg")
+							img(src="uploads/production/prod-2.jpg", alt="")
+					.swiper-slide
+						a(class="img" data-fslightbox="ab-prod" href="uploads/production/prod-3.jpg")
+							img(src="uploads/production/prod-3.jpg", alt="")
+					.swiper-slide
+						a(class="img" data-fslightbox="ab-prod" href="uploads/production/prod-4.jpg")
+							img(src="uploads/production/prod-4.jpg", alt="")
+					.swiper-slide
+						a(class="img" data-fslightbox="ab-prod" href="uploads/production/prod-1.jpg")
+							img(src="uploads/production/prod-1.jpg", alt="")
+					.swiper-slide
+						a(class="img" data-fslightbox="ab-prod" href="uploads/production/prod-2.jpg")
+							img(src="uploads/production/prod-2.jpg", alt="")
+			button.ap-prev
+				+mono-svg('chevron-right')
+			button.ap-next
+				+mono-svg('chevron-right')
+			.ap__pagination
+				
+			

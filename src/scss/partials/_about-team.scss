@@ -1,0 +1,99 @@
+.about-team {
+	.h2 {
+		margin-bottom: 30px;
+
+		@include mw768 {
+			margin-bottom: 10px;
+		}
+	}
+
+	.text {
+		margin-bottom: 43px;
+		display: grid;
+		grid-gap: 20px;
+		grid-template-columns: 433px 1fr;
+
+		&>span {
+			display: block;
+			max-width: 774px;
+			grid-column: 2 / 4;
+			font-size: 20px;
+			line-height: 29px;
+		}
+
+		@include mw1024 {
+			margin-bottom: 30px;
+			display: block;
+			&>span {
+				max-width: 660px;
+			}
+		}
+
+		@include mw768 {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__grid {
+		margin-top: -100px;
+		overflow-x: auto;
+		@include mw1024 {
+			margin-top: 0;
+		}
+		&::-webkit-scrollbar {
+			width: 0;
+			height: 0;
+		}
+
+		.about-team__grid-wrapper {
+			display: flex;
+			flex-wrap: nowrap;
+			align-items: flex-end;
+			grid-gap: 20px;
+			width: max-content;
+			@include mw1024 {align-items: stretch;}
+		}
+
+		&-item {		
+			&:not(:first-child){
+				width: 320px;
+			}
+			.img {
+				img {
+					aspect-ratio: 320 / 380;
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+			&:nth-child(1){
+				width: 433px;
+				.img {
+					img {
+						aspect-ratio: 433 / 480;
+					}
+				}
+				@include mw1024 {
+					width: 320px;
+					.img {
+						img {
+							aspect-ratio: 320 / 380;
+						}
+					}
+				}
+			}
+			.h3 {margin: 10px 0;}
+			@include mw575 {
+				&:not(:first-child),
+				&:first-child { width: 152px;}
+				&:nth-child(n) {
+					.img {
+						img {
+							aspect-ratio: 152 / 180;
+						}
+					}
+				}
+				.h3 {margin: 5px 0 0;}
+			}
+		}
+	}
+}
