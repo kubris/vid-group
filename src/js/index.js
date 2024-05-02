@@ -614,5 +614,70 @@ if (videoWrap) {
 		}
 	});
 }
-
 // === end VIDEO
+
+// === start ACCORDION
+if (document.querySelector(".accordion-btn")) {
+	const acc = document.getElementsByClassName("accordion-btn");
+	for (let i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function () {
+			if (!this.classList.contains("active")) {
+				closeAccTabs();
+				toggleAcc(this);
+				console.log("Non Active");
+			} else {
+				closeAccTabs();
+				console.log("Active");
+			}
+		});
+	}
+	function toggleAcc(e) {
+		e.classList.toggle("active");
+		var panel = e.nextElementSibling;
+		if (panel.style.maxHeight) {
+			panel.style.maxHeight = null;
+		} else {
+			panel.style.maxHeight = panel.scrollHeight + "px";
+		}
+	}
+	function closeAccTabs() {
+		for (let i = 0; i < acc.length; i++) {
+			if (acc[i].classList.contains("active")) {
+				acc[i].classList.remove("active");
+				acc[i].nextElementSibling.removeAttribute("style");
+			}
+		}
+	}
+	function openFirstAccTab() {
+		if (!acc[0].classList.contains("active")) {
+			acc[0].classList.add("active");
+			acc[0].nextElementSibling.style.maxHeight =
+				acc[0].nextElementSibling.scrollHeight + "px";
+		}
+	}
+	window.addEventListener(
+		"resize",
+		function () {
+			for (let i = 0; i < acc.length; i++) {
+				if (acc[i].classList.contains("active")) {
+					acc[i].nextElementSibling.style.maxHeight =
+						acc[i].nextElementSibling.scrollHeight + "px";
+				}
+			}
+		},
+		true
+	);
+}
+// === end ACCORDION
+
+// === start RELOCATE BY CLICK
+const allPosts = document.querySelectorAll("[data-postlink]");
+if (allPosts.length > 0) {
+	allPosts.forEach((post) => {
+		post.addEventListener("click", (e) => {
+			let link = e.currentTarget.dataset.postlink;
+			location.href = link;
+		});
+	});
+}
+// === end RELOCATE BY CLICK

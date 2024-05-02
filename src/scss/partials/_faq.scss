@@ -1,0 +1,53 @@
+.faq {
+
+	.breadcrumbs {
+		margin: 30px 0 40px;
+	}
+
+	&__block {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-gap: 20px;
+
+		&-accordion {
+			grid-column: 3 / 11;
+
+			.h1 {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	@include mw1024 {
+		&__block {
+			display: grid;
+			grid-template-columns: 1fr;
+
+			&-accordion {
+				grid-column: auto;
+			}
+		}
+	}
+
+	@include mw768 {
+		.accordion-wrapper {
+			margin: 0 -20px;
+		}
+		.accordion-content {
+			padding: 0 20px;
+		}
+		.accordion-btn {
+			margin-bottom: 20px;
+		}
+
+
+		&__block {	
+			&-accordion {
+				.h1 {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+
+}

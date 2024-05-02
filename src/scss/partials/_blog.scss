@@ -1,0 +1,146 @@
+.blog {
+
+	.breadcrumbs {
+		margin: 30px 0 40px;
+
+		@include mw1024 {
+			margin: 20px 0 40px;
+		}
+
+		@include mw768 {
+			margin: 10px 0 30px;
+		}
+	}
+
+	.pagination {
+		margin-top: 60px;
+		grid-column: 3 / 7;
+
+		&-wrapper {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			grid-gap: 20px;
+			@include mw1024 {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		@include mw1024 {
+			grid-column: auto;
+		}
+		@include mw768 {
+			margin-top: 40px;
+		}
+	}
+
+	.h1 {
+		margin-bottom: 60px;
+
+		@include mw768 {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-gap: 20px;
+		@include mw1024 {
+			display: flex;
+			flex-direction: column-reverse;
+			gap: 40px;
+		}
+
+		&-posts {
+			grid-column: 1 / 9;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 40px 20px;
+			@include mw1024 {grid-gap: 20px}
+			@include mw768 {grid-gap: 40px}
+		}
+
+		&-post {
+			.img {
+				width: 100%;
+				aspect-ratio: 433 / 320;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			&>span {
+				margin: 10px 0;
+				display: block;
+				font-size: 18px;
+				color: var(--gray600);
+				line-height: 28px;
+			}
+
+			.h3 {
+				margin-bottom: 10px;
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+			}
+
+			p {
+				display: -webkit-box;
+				-webkit-line-clamp: 4;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+			}
+		}
+
+		&-aside {
+			grid-column: 10 / 13;
+
+			.search-field {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	.foo-list {
+		margin-bottom: 40px;
+		@include mw1024 {margin-bottom: 0;}
+
+		&__title {
+			margin-bottom: 15px;
+			font-size: 20px;
+			font-weight: 500;
+			color: var(--dark);
+			line-height: 26px;
+			text-transform: none;
+			@include mw768 {
+				margin-bottom: 0;
+				font-size: 18px;
+				line-height: 28px;
+			}
+		}
+
+		&>li {
+			color: var(--gray600);
+			font-size: 18px;
+			line-height: 28px;
+			& + li {margin-top: 15px;}
+			@include mw768 {font-size: 16px;}
+		}
+	}
+}
+.slide-list {
+	&__wrapper {
+		@include mw1024 {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 20px;
+		}
+		@include mw575 {
+			grid-template-columns: 1fr;
+		}
+	}
+}

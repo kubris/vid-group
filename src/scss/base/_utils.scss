@@ -55,6 +55,8 @@
 	}
 }
 
+[data-postlink] {cursor: pointer;}
+
 .mt40-sm30 {
 	margin-top: 40px !important;
 	@include mw768 {margin-top: 30px !important;}
