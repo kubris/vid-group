@@ -1,0 +1,48 @@
+.bp-intrest {
+	&__slider {
+		overflow-x: hidden;
+
+		.swiper-slide {
+			.img {
+				img {
+					width: 100%;
+					aspect-ratio: 433 / 320;
+					object-fit: cover;
+
+					@include mw1024 {
+						aspect-ratio: 320 / 320;
+					}
+
+					@include mw768 {
+						aspect-ratio: 300 / 220;
+					}
+				}
+			}
+
+			&>span {
+				display: block;
+				margin: 10px 0;
+			}
+
+			.h3 {
+				margin-bottom: 10px;
+			}
+
+			&>p {
+				display: -webkit-box;
+				-webkit-line-clamp: 4;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+			}
+			@include mw768 {
+				&>span {
+					margin: 3px 0;
+				}
+	
+				.h3 {
+					margin-bottom: 3px;
+				}
+			}
+		}
+	}
+}

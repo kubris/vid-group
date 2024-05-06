@@ -15,7 +15,7 @@ body {
 	font-size: 1.8rem;
 	line-height: 2.8rem;
 	color: var(--dark);
-	background-color: var(--white);
+	background-color: var(--gray200);
 	overflow-x: hidden;
 
 	@include mw575 {

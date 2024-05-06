@@ -1,0 +1,85 @@
+section.lk-page.offset
+	.container
+		+breadcrumb(['Главная'],
+			'Личный кабинет',
+			'',
+			['/', 'lk.html'])
+
+		.lk-page__wrapper
+			.lk-page__title
+				.h1 Личный кабинет
+
+		.lk-page__wrapper
+			.lk-page__block
+				.names 
+					span Клиент: Лилия Вяльчина
+					span Контактное лицо: Оксана Орлова
+				.prj-tabs__block
+					.hth
+						button.htb.active(data-tb='one') Статус
+						button.htb(data-tb='two') Чат
+						button.htb(data-tb='three') Документы
+						button.htb(data-tb='four') Загрузка документов
+						button.htb(data-tb='five') Оплатить онлайн
+					.bth
+						.btb(data-cnt='one')
+							.lk-page__status
+								.lk-page__status-ld.lkp-item
+									span Анализ подписанного контракта
+								.lk-page__status-cd.lkp-item
+									span.r-side
+										+mono-svg('check', 'lk-ch')
+								.lk-page__status-cd.lkp-item
+									span.l-side
+										+mono-svg('check', 'lk-ch')
+								.lk-page__status-rd.lkp-item
+									span Разработка проекта изделия
+								.lk-page__status-ld.lkp-item
+									span Согласование проекта с Заказчиком
+								.lk-page__status-cd.lkp-item
+									span.r-side
+										+mono-svg('book', 'lk-book')
+								.lk-page__status-cd.lkp-item
+									span.l-side
+										+mono-svg('lock', 'lk-lck')
+								.lk-page__status-rd.lkp-item
+									span Разработка ВПГ
+								.lk-page__status-ld.lkp-item
+									span Заготовка
+								.lk-page__status-cd.lkp-item
+									span.r-side
+										+mono-svg('lock', 'lk-lck')
+								.lk-page__status-cd.lkp-item
+									span.l-side
+										+mono-svg('lock', 'lk-lck')
+								.lk-page__status-rd.lkp-item
+									span Сборка
+								.lk-page__status-ld.lkp-item
+									span Уведомление Заказчика о готовности изделия и назначение даты монтажа
+								.lk-page__status-cd.lkp-item
+									span.r-side
+										+mono-svg('lock', 'lk-lck')
+								.lk-page__status-cd.lkp-item
+									span.l-side
+										+mono-svg('lock', 'lk-lck')
+								.lk-page__status-rd.lkp-item
+									span Монтаж изделия
+								.lk-page__status-ld.lkp-item
+									span Контроль качества монтажа и сдача работ заказчику
+								.lk-page__status-cd.lkp-item
+									span.r-side
+										+mono-svg('lock', 'lk-lck')
+								.lk-page__status-cd.lkp-item
+									span.l-side
+										+mono-svg('lock', 'lk-lck')
+								.lk-page__status-rd.lkp-item
+									span Подписание закрывающих документов и получение оплаты
+
+						.btb(data-cnt='two')
+							| Чат
+						.btb(data-cnt='three')
+							| Документы
+						.btb(data-cnt='four')
+							| Загрузка документов
+						.btb(data-cnt='five')
+							| Оплатить онлайн

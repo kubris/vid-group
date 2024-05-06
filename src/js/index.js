@@ -599,6 +599,26 @@ if (document.querySelector('.ap-slider')) {
 }
 // === end ABOUT PRODUCTION SLIDER
 
+// === start ABOUT PRODUCTION SLIDER
+if (document.querySelector('.bp-intrest__slider')) {
+	const bpSwiper = new Swiper(".bp-intrest__slider", {
+		slidesPerView: 1.1,
+		spaceBetween: 20,
+		loop: true,
+		breakpoints: {
+			768: {
+				slidesPerView: 2.1,
+				spaceBetween: 20
+			},
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 20
+			},
+		}
+	});
+}
+// === end ABOUT PRODUCTION SLIDER
+
 // === start VIDEO
 const videoWrap = document.querySelector('#video');
 if (videoWrap) {

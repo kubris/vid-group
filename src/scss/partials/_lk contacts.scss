@@ -1,0 +1,101 @@
+.lk-contacts {
+	&__grid {
+		margin: 0 auto;
+		max-width: 1114px;
+		width: 100%;
+		display: grid;
+		grid-template-columns: 623px 1fr;
+		grid-gap: 40px 57px;
+		@include mw1024 {
+			grid-gap: 40px;
+			grid-template-columns: 1fr;
+			max-width: unset;
+		}
+		@include mw768 {
+			flex-direction: column;
+			gap: 40px;
+		}
+
+		&-item {
+			@include mw1024 {
+				display: flex;
+				gap: 20px;
+				width: 100%;
+				justify-content: space-between;
+			}
+			@include mw768 {
+				flex-direction: column;
+				gap: 30px;
+				&:last-child {display: none;}
+			}
+
+			p {
+				@include mw768 {font-size: 18px;}
+			}
+
+			p + p {
+				margin-top: 20px;
+				@include mw768 {margin-top: 15px;}
+			}
+
+			p + .h3,
+			p + .btn,
+			a + .h3 {
+				margin-top: 40px;
+			}			
+
+			.h3 {
+				color: var(--gray600);
+				margin-bottom: 20px;
+			}
+
+			&:nth-child(1) {
+				.btn {
+					display: none;
+					@include mw768 {
+						display: block;
+						max-width: 360px;
+					}
+				}
+			}
+			&:nth-child(3) {				
+				@include mw768 {
+					.btn {
+						display: none;
+					}
+				}
+			}
+		}
+
+		&-row {
+			width: 100%;
+			& + .lk-contacts__grid-row {
+				margin-top: 40px;
+				@include mw1024 {margin-top: 0;}
+			}
+
+			& > a {
+				transition: color 0.2s ease-out;
+				&:hover {color:var(--accent)}
+				@include mw768 {font-size: 18px;}		
+			}
+		}
+
+		.ftc-socials {
+			margin-top: 40px;
+			&.mid-show {
+				display: none;
+				@include mw1024 {
+					margin-top: 0;
+					display: flex;
+				}
+				@include mw768 {display: none;}
+			}
+			@include mw1024 {display: none;}
+			@include mw768 {
+				display: flex;
+				margin-top: 0;
+			}
+		}
+	}
+}
