@@ -107,6 +107,13 @@ if (document.querySelector(".callback-bg")) {
 		modalWin.classList.remove("show");
 		enableScroll();
 	});
+
+	document.body.addEventListener('keydown', function (e) {
+		if (e.key == "Escape" && modalWin.classList.contains("show")) {
+			modalWin.classList.remove("show");
+			enableScroll();
+		}
+	});
 }
 // === end MODAL CALLBACK
 
@@ -127,6 +134,13 @@ if (document.querySelector(".search-bg")) {
 		modalWin.classList.remove("show");
 		enableScroll();
 	});
+
+	document.body.addEventListener('keydown', function (e) {
+		if (e.key == "Escape" && modalWin.classList.contains("show")) {
+			modalWin.classList.remove("show");
+			enableScroll();
+		}
+	});
 }
 // === end MODAL SEARCH
 
@@ -146,6 +160,13 @@ if (document.querySelector(".lk-bg")) {
 	closeWin.addEventListener("click", (event) => {
 		modalWin.classList.remove("show");
 		enableScroll();
+	});
+
+	document.body.addEventListener('keydown', function (e) {
+		if (e.key == "Escape" && modalWin.classList.contains("show")) {
+			modalWin.classList.remove("show");
+			enableScroll();
+		}
 	});
 }
 // === end MODAL SEARCH
