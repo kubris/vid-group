@@ -488,78 +488,82 @@ if (allHeights.length > 0) {
 // === end TOGGLE HEIGHT
 
 // === start SELECT FIELD
-var x, i, j, l, ll, selElmnt, a, b, c;
-x = document.getElementsByClassName("custom-select");
-l = x.length;
-for (i = 0; i < l; i++) {
-	selElmnt = x[i].getElementsByTagName("select")[0];
-	ll = selElmnt.length;
-	a = document.createElement("DIV");
-	a.setAttribute("class", "select-selected");
-	a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-	x[i].appendChild(a);
-	b = document.createElement("DIV");
-	b.setAttribute("class", "select-items select-hide");
-	for (j = 1; j < ll; j++) {
-		c = document.createElement("DIV");
-		c.innerHTML = selElmnt.options[j].innerHTML;
-		c.addEventListener("click", function (e) {
-			var y, i, k, s, h, sl, yl;
-			s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-			sl = s.length;
-			h = this.parentNode.previousSibling;
-			for (i = 0; i < sl; i++) {
-				if (s.options[i].innerHTML == this.innerHTML) {
-					s.selectedIndex = i;
-					h.innerHTML = this.innerHTML;
-					y = this.parentNode.getElementsByClassName("same-as-selected");
-					yl = y.length;
-					for (k = 0; k < yl; k++) {
-						y[k].removeAttribute("class");
+let x = document.getElementsByClassName("custom-select");
+if (x) {
+	const eventChange = new Event('change');
+	let i, j, l, ll, selElmnt, a, b, c;
+	l = x.length;
+	for (i = 0; i < l; i++) {
+		selElmnt = x[i].getElementsByTagName("select")[0];
+		ll = selElmnt.length;
+		a = document.createElement("DIV");
+		a.setAttribute("class", "select-selected");
+		a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+		x[i].appendChild(a);
+		b = document.createElement("DIV");
+		b.setAttribute("class", "select-items select-hide");
+		for (j = 1; j < ll; j++) {
+			c = document.createElement("DIV");
+			c.innerHTML = selElmnt.options[j].innerHTML;
+			c.addEventListener("click", function (e) {
+				let y, i, k, s, h, sl, yl;
+				s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+				sl = s.length;
+				h = this.parentNode.previousSibling;
+				for (i = 0; i < sl; i++) {
+					if (s.options[i].innerHTML == this.innerHTML) {
+						s.selectedIndex = i;
+						h.innerHTML = this.innerHTML;
+						y = this.parentNode.getElementsByClassName("same-as-selected");
+						yl = y.length;
+						for (k = 0; k < yl; k++) {
+							y[k].removeAttribute("class");
+						}
+						this.setAttribute("class", "same-as-selected");
+						break;
 					}
-					this.setAttribute("class", "same-as-selected");
-					break;
 				}
-			}
-			h.click();
+				h.click();
+				s.dispatchEvent(eventChange);
+			});
+			b.appendChild(c);
+		}
+		x[i].appendChild(b);
+		a.addEventListener("click", function (e) {
+			e.stopPropagation();
+			closeAllSelect(this);
+			this.nextSibling.classList.toggle("select-hide");
+			this.classList.toggle("select-arrow-active");
 		});
-		b.appendChild(c);
 	}
-	x[i].appendChild(b);
-	a.addEventListener("click", function (e) {
-		e.stopPropagation();
-		closeAllSelect(this);
-		this.nextSibling.classList.toggle("select-hide");
-		this.classList.toggle("select-arrow-active");
-	});
-}
-function closeAllSelect(elmnt) {
-	var x,
-		y,
-		i,
-		xl,
-		yl,
-		arrNo = [];
-	x = document.getElementsByClassName("select-items");
-	y = document.getElementsByClassName("select-selected");
-	xl = x.length;
-	yl = y.length;
-	for (i = 0; i < yl; i++) {
-		if (elmnt == y[i]) {
-			arrNo.push(i);
-		} else {
-			y[i].classList.remove("select-arrow-active");
+	function closeAllSelect(elmnt) {
+		var x,
+			y,
+			i,
+			xl,
+			yl,
+			arrNo = [];
+		x = document.getElementsByClassName("select-items");
+		y = document.getElementsByClassName("select-selected");
+		xl = x.length;
+		yl = y.length;
+		for (i = 0; i < yl; i++) {
+			if (elmnt == y[i]) {
+				arrNo.push(i);
+			} else {
+				y[i].classList.remove("select-arrow-active");
+			}
+		}
+		for (i = 0; i < xl; i++) {
+			if (arrNo.indexOf(i)) {
+				x[i].classList.add("select-hide");
+			}
 		}
 	}
-	for (i = 0; i < xl; i++) {
-		if (arrNo.indexOf(i)) {
-			x[i].classList.add("select-hide");
-		}
-	}
-}
 
-if (document.getElementsByClassName("custom-select")) {
-	document.addEventListener("click", closeAllSelect);
+	if (document.getElementsByClassName("custom-select")) {
+		document.addEventListener("click", closeAllSelect);
+	}
 }
 // === end SELECT FIELD
 
@@ -722,3 +726,99 @@ if (allPosts.length > 0) {
 	});
 }
 // === end RELOCATE BY CLICK
+
+// === start PAGINATION
+const pg = document.querySelector('.pagination');
+if (pg) {
+	const pgItems = pg.querySelectorAll('.pagination-list a');
+	const prev = pg.querySelector('.pagination-prev');
+
+	if (!pgItems[0].closest('li').classList.contains('active')) {
+		if (prev.classList.contains('disable')) {
+			prev.classList.remove('disable');
+		}
+	}
+	/* --- if will be AJAX post switching ---
+	pgItems.forEach((item) => {
+		item.addEventListener('click', (e) => {
+			e.preventDefault();
+
+			pgItems.forEach((el) => {
+				if(el.closest('li').classList.contains('active')) {
+					el.closest('li').classList.remove('active');
+				}
+			});
+
+			e.currentTarget.closest('li').classList.add('active');
+
+			if(pgItems[0].closest('li').classList.contains('active')) {
+				if(!prev.classList.contains('disable')){
+					prev.classList.add('disable');
+				}
+			} else {
+				if(prev.classList.contains('disable')){
+					prev.classList.remove('disable');
+				}
+			}
+			
+		});
+	});
+	*/
+}
+// === end PAGINATION
+
+// === start CALC
+const clInp = document.querySelectorAll(".jsCalcField");
+if (clInp.length > 0) {
+	const clSel = document.querySelectorAll(".jsCalcSelect");
+	let clA = document.querySelector(".jsCalcPrice");
+	let letterPriceSqSm = 120;
+
+	let amount = Number(clA.textContent);
+	let cmPrice = 800; /* 800 рублей за кв.см */
+
+	clInp.forEach((inp) => {
+		inp.addEventListener("keyup", () => {
+			sumAll();
+		});
+	});
+
+	clSel.forEach((sel) => {
+		sel.addEventListener("change", function () {
+			sumAll();
+		});
+	});
+
+	function sumAll() {
+		const result = {
+			res: 0,
+			baseNull: false
+		};
+
+		clInp.forEach((inp) => {
+			if (result.res === 0) {
+				result.baseNull = false;
+				result.res += Number(inp.value);
+				return result;
+			} else {
+				result.baseNull = true;
+				result.res *= Number(inp.value) * letterPriceSqSm;
+				return result;
+			}
+		});
+
+		clSel.forEach((sel) => {
+			if (result.baseNull) {
+				result.res *= Number(sel.value);
+				return result;
+			}
+		});
+
+		if (result.baseNull) {
+			clA.textContent = result.res.toFixed(2);
+		} else {
+			clA.textContent = 0;
+		}
+	}
+}
+// === end CALC

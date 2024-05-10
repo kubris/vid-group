@@ -31,7 +31,10 @@
 		&.show {
 			transform: translateY(0);
 		}
-		@include mw1024 {display: block}
+
+		@include mw1024 {
+			display: block
+		}
 	}
 
 	&__close {
@@ -40,6 +43,7 @@
 		right: 20px;
 		width: 20px;
 		height: 20px;
+
 		svg {
 			fill: var(--accent);
 		}
@@ -50,10 +54,16 @@
 		flex-direction: column;
 		gap: 15px;
 
-		& > li {
+		&>li {
 			padding: 10px 0;
 			border-bottom: 1px solid #ccc;
-			font-size: 18px;
+
+			&>span,
+			&>a {
+				font-size: 18px;
+				font-weight: 500;
+			}
+
 		}
 	}
 
@@ -70,7 +80,7 @@
 		justify-content: center;
 		gap: 30px;
 
-		& > a {
+		&>a {
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -81,11 +91,13 @@
 			img {
 				transition: transform 0.2s ease-out;
 			}
+
 			&:hover {
 				img {
 					transform: scale(1.1);
 				}
 			}
+
 			&:active {
 				img {
 					transform: scale(0.95);
@@ -96,6 +108,11 @@
 }
 
 @media (max-height: 580px) and (max-width: 1024px) {
-	.m-menu__btns {margin-top: auto}
-	.m-menu {height: 100%}
+	.m-menu__btns {
+		margin-top: auto
+	}
+
+	.m-menu {
+		height: 100%
+	}
 }

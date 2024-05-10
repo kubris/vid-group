@@ -84,6 +84,7 @@ article {
 	background-color: var(--gray200);
 	@include mw768 {
 		margin: 0 -20px;
+		max-width: unset;
 	}
 
 	.h3 {
@@ -165,7 +166,7 @@ article {
 	line-height: 18px;
 	&+input,
 	&+textarea {
-		margin-top: 15px;
 		border: 1px solid var(--danger);
+		@include mw768 {margin-top: 15px;}
 	}
 }

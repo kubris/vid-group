@@ -8,29 +8,29 @@ section.sp-calc.offset
 			.sp-calc__grid-item
 				.calc__field
 					.h3 Количество букв
-					input(name="calc-amount" value="0" type="text")
+					input.jsCalcField(name="calc-height", value="0", type="text")
 			.sp-calc__grid-item
 				.calc__field
 					.h3 Высота букв, см
-					input(name="calc-height" value="0" type="text")
+					input.jsCalcField(name="calc-height", value="0", type="text")
 			.sp-calc__grid-item
 				.calc__field
 					.h3 Шрифт
 					.custom-select
-						select
-							option(value='0') Выбрать из списка
+						select.jsCalcSelect 
+							option(value='1') Выбрать из списка
 							option(value='1') Простой шрифт
-							option(value='2') Шрифт с засечками
-							option(value='3') Курсивный шрифт
+							option(value='1.25') Шрифт с засечками
+							option(value='1.35') Курсивный шрифт
 			.sp-calc__grid-item
 				.calc__field
 					.h3 Варианты подсветки
 					.custom-select
-						select
-							option(value='0') Выбрать из списка
+						select.jsCalcSelect 
+							option(value='1') Выбрать из списка
 							option(value='1') Светится только лицевая сторона
-							option(value='2') Светится лицевая сторона и торец
-							option(value='3') Светится только торец
+							option(value='1.2') Светится лицевая сторона и торец
+							option(value='1.3') Светится только торец
 			.sp-calc__grid-item
 				.calc__field.calc__field-price
 					.h3 Цена:

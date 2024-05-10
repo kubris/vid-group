@@ -57,6 +57,8 @@
 
 	.prj-tabs__block .hth {
 		margin-bottom: 80px;
+		@include mw1024 {margin-bottom: 60px;}
+		@include mw768 {margin-bottom: 50px;}
 	}
 
 	&__status {
